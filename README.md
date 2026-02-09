@@ -1,4 +1,4 @@
-🚀 Google OAuth Lead Registration App
+**🚀 Google OAuth Lead Registration App**
 
 A full-stack web application that allows users to sign in with Google OAuth, submit lead details, and securely store them in MongoDB.
 The project demonstrates a complete authentication flow using Google Identity Services, React, Express, and MongoDB.
