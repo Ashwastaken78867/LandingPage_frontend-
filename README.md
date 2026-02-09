@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+🚀 Google OAuth Lead Registration App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application that allows users to sign in with Google OAuth, submit lead details, and securely store them in MongoDB.
+The project demonstrates a complete authentication flow using Google Identity Services, React, Express, and MongoDB.
 
-## Available Scripts
+🔗 Live Demo
 
-In the project directory, you can run:
+Frontend (Vercel):
+👉 https://landing-page-frontend-lemon.vercel.app/
 
-### `npm start`
+Backend API (Render):
+👉 https://landingpage-backend-c258.onrender.com
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🛠️ Tech Stack
+Frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+React
 
-### `npm test`
+@react-oauth/google
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Axios
 
-### `npm run build`
+CSS (custom styling)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Vercel (deployment)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Backend
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Node.js
 
-### `npm run eject`
+Express.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+MongoDB + Mongoose
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+google-auth-library
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+CORS
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Render (deployment)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+✨ Features
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Google Sign-In using OAuth 2.0
 
-### Code Splitting
+Secure ID token verification on backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Lead submission form (name & phone)
 
-### Analyzing the Bundle Size
+MongoDB persistence
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Duplicate prevention using Google ID
 
-### Making a Progressive Web App
+Clean and professional UI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Fully deployed frontend & backend
 
-### Advanced Configuration
+🔐 Authentication Flow (How it works)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+User signs in using Google Login on the frontend.
 
-### Deployment
+Google returns an ID token to the client.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Frontend sends the token along with form data to the backend.
 
-### `npm run build` fails to minify
+Backend verifies the token using google-auth-library.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+User details are extracted from the verified token.
+
+Lead data is saved in MongoDB.
+
+Success response is returned to the client.
+
+This approach avoids redirect-based OAuth and uses a modern, secure token verification flow.
+
+⚙️ Environment Variables
+Backend (.env)
+
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+GOOGLE_CLIENT_ID=your_google_client_id
+
+Frontend (.env)
+VITE_GOOGLE_CLIENT_ID=your_google_client_id
+VITE_API_URL=https://landingpage-backend-c258.onrender.com
+
+▶️ Run Locally
+Backend
+
+npm install
+npm run dev
+
+Frontend
+
+npm install
+npm run dev
+
+📌 Notes
+
+Redirect URIs are configured in Google Cloud Console but not used in the token-based flow.
+
+OAuth secrets are never exposed on the frontend.
+
+Backend verifies every Google token before processing requests.
+
+👤 Author
+
+Ash Bagda
