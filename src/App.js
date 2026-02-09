@@ -16,10 +16,14 @@ function App() {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:5000/api/lead", {
-        ...form,
-        token,
-      });
+     await axios.post(
+  "https://landingpage-backend-c258.onrender.com/api/lead",
+  {
+    ...form,
+    token,
+  }
+);
+
 
       alert("Lead saved successfully!");
 
