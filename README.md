@@ -1,28 +1,24 @@
-*🚀 Google OAuth Lead Registration App*
+#🚀 Google OAuth Lead Registration App*
 
 A full-stack web application that allows users to sign in with Google OAuth, submit lead details, and securely store them in MongoDB.
 The project demonstrates a complete authentication flow using Google Identity Services, React, Express, and MongoDB.
 
-🔗 Live Demo
+##🔗 Live Demo
 
-Frontend (Vercel):
+###Frontend (Vercel):
 👉 https://landing-page-frontend-lemon.vercel.app/
 
-Backend API (Render):
+###Backend API (Render):
 👉 https://landingpage-backend-c258.onrender.com
 
-🛠️ Tech Stack
-Frontend
+##🛠️ Tech Stack
 
-React
-
-@react-oauth/google
-
-Axios
-
-CSS (custom styling)
-
-Vercel (deployment)
+###Frontend
+- React
+- @react-oauth/google
+- Axios
+- CSS (custom styling)
+- Vercel (deployment)
 
 Backend
 
